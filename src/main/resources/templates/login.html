@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+<h1>Movie Ticket Booking</h1>
+<form action="#" th:action="@{/login}" method="post">
+    <h1>Log-In</h1>
+    <div th:if="${param.error}">
+        <div class="alert movie">
+            Invalid username or password.
+        </div>
+    </div>
+    <div th:if="${param.logout}">
+        <div class="alert movie">
+            You have been logged out.
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <label for="username">Username</label>:
+            <input type="text"
+                   id="username"
+                   name="username"
+                   autofocus="autofocus"
+                   placeholder="Username">
+        </div>
+
+    <div>
+        <label for="password">Password</label>:
+        <input type="password"
+               id="password"
+               name="password"
+               placeholder="Password">
+    </div>
+    <div>
+        <input type="submit"
+               name="login-submit"
+               id="login-submit"
+               value="Log In">
+    </div>
+</div>
+</form>
+
+</body>
+</html>

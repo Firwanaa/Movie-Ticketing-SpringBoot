@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1>Movie Ticket Booking</h1>
+<div class="logged movie" sec:authorize="isAuthenticated()">
+
+    User's Name: <span id="span1" sec:authentication="name"></span>
+    <br>
+    Roles: <span id="span2" sec:authentication="principal.authorities"></span>
+    <br>
+    <br>
+
+    <div>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout" />
+            <br/>
+            <div sec:authorize="hasRole('ADMIN')">
+                <a class="admin" th:href="@{/h2-console}">Admin-H2</a>
+                <br/>
+                <a class="admin" th:href="@{/adminpage}">Edit DB</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="movie">
+
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Movie Id</th>
+        <th>Movie Name</th>
+        <th>name</th>
+        <th>discount Cat</th>
+        <th>Seat</th>
+        <th>Time</th>
+        <th>Price</th>
+        <th>Avi Seats</th>
+    </tr>
+
+    <!-- It's like an advanced for loop -->
+    <tr th:each="movies : ${m}">
+
+        <td  th:text="${movies.mpk}"></td>
+        <td th:text="${movies.movieId}"></td>
+        <td th:text="${movies.movieName}"></td>
+       <td th:text="${movies.discountCat}"></td>
+        <td th:text="${movies.visitor_name}"></td>
+        <td th:text="${movies.seatTaken}"></td>
+        <td th:text="${movies.mTime}"></td>
+        <td th:text="${movies.moviePrice}"></td>
+        <td th:text="${movies.aviSeats}"></td>
+        <td><a href="" th:href="@{/editTicket/{mpk}(mpk=${movies.mpk})}" > EDIT </a> </td>
+        <td><a href="" th:href="@{/delete/{mpk}(mpk=${movies.mpk})}" > DELETE </a> </td>
+    </tr>
+
+
+</table>
+</div>
+<div class="buttonHolder">
+    <a th:href="@{/}"> Main Page</a></div>
+</body>
+</html>

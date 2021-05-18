@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<h1>Movie Ticket Booking</h1>
+<div class="logged movie" sec:authorize="isAuthenticated()">
+    User's Name: <span id="span1" sec:authentication="name"></span>
+    <br>
+    Roles: <span id="span2" sec:authentication="principal.authorities"></span>
+    <br>
+    <br>
+
+    <div>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout" />
+            <br/>
+            <div sec:authorize="hasRole('ADMIN')">
+                <a class="admin" th:href="@{/h2-console}">Admin-H2</a>
+                <br/>
+                <a class="admin" th:href="@{/adminpage}">Edit DB</a>
+            </div>
+        </form>
+    </div>
+</div>
+<form th:action="@{/confirmation}"  method="get">
+
+    <pre><div class="movie" th:text="${movie1}">
+        <p>Your Ticket</p>
+    </div></pre>
+
+
+</form>
+<div class="buttonHolder">
+    <a th:href="@{/}">Go to main page</a><br>
+    <a th:href="@{/viewTickets}">Go to Tickets</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<h1>Movie Ticket Booking</h1>
+<div class="logged movie" sec:authorize="isAuthenticated()">
+
+    User's Name: <span id="span1" sec:authentication="name"></span>
+    <br>
+    Roles: <span id="span2" sec:authentication="principal.authorities"></span>
+    <br>
+    <br>
+
+    <div>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout" />
+            <br/>
+            <div sec:authorize="hasRole('ADMIN')">
+                <a class="admin" th:href="@{/h2-console}">Admin-H2</a>
+                <br/>
+                <a class="admin" th:href="@{/adminpage}">Edit DB</a>
+            </div>
+        </form>
+    </div>
+</div>
+<form th:action="@{/confirmation}" th:object="${movie1}" method="get">
+    <div class="movie hvr-wobble-skew">
+        <input type="hidden" name="movieId" value="3"/>
+        <input type="hidden" name="movieName" value="Storks (2016)"/>
+        <img class="hvr-buzz-out" src="https://upload.wikimedia.org/wikipedia/en/1/13/Storks_%28film%29_poster_2.jpg">
+        <p class="OnemovieView">Storks (2016)</p>
+        <p class="OnemovieView" >Price: 15 CAD</p>
+        <label class="OnemovieView">Seat<input type="number" min="1" max="100" name="seatTaken" required th:field="*{seatTaken}" /></label>
+        <label >Select time</label>
+
+        <select name="mTime" id="mTtime">
+            <option value="08:00">08:00</option>
+            <option value="10:00">10:00</option>
+            <option value="12:00">12:00</option>
+            <option value="04:00">04:00</option>
+        </select>
+        <br>
+        <label >Name<input th:field="*{visitor_name}" type="text" placeholder="name"/></label>
+
+    </div>
+    <div class="movie">
+        <label> Student<input class="radiobtn" type="radio" name="discountCat" value="1" th:field="*{discountCat}"><br></label>
+        <label> PROG32758 Student<input class="radiobtn" type="radio" name="discountCat" value="2" th:field="*{discountCat}"><br></label>
+        <label> Senior Citizen’s and Children<input class="radiobtn" type="radio" name="discountCat" value="3" th:field="*{discountCat}"><br></label>
+    </div>
+
+
+   <div class="buttonHolder">
+       <input type="submit" value="Confirm" />
+   </div>
+</form>
+<div class="buttonHolder">
+    <a th:href="@{/}">Go to main page</a>
+</div>
+
+</body>
+</html>

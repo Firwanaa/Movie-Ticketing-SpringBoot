@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+
+    <h1>Movie Ticket Booking</h1>
+    <div class="logged movie" sec:authorize="isAuthenticated()">
+
+        User's Name: <span id="span1" sec:authentication="name"></span>
+        <br>
+        Roles: <span id="span2" sec:authentication="principal.authorities"></span>
+        <br>
+        <br>
+
+        <div>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Logout" />
+                <br/>
+                <div sec:authorize="hasRole('ADMIN')">
+                    <a class="admin" th:href="@{/h2-console}">Admin-H2</a>
+                    <br/>
+                    <a class="admin" th:href="@{/adminpage}">Edit DB</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--    <p>User Name:</p><input type="text" th:field="*{id}" />-->
+    <!--    <p>User Name:</p><input type="text" th:field="*{name}" />-->
+    <a class="outer" th:href="@{/login}">Login</a>
+    <a class="outer" th:href="@{/register}">Register</a>
+    <div class="container ">
+
+        <div class="movie  hvr-wobble-top ">
+            <img class="hvr-buzz" src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Ice_age_collision_course.jpg/220px-Ice_age_collision_course.jpg">
+            <p>Ice Age (2002)</p>
+            <a th:href="@{/movie1}">Book</a>
+
+        </div>
+        <div class="movie hvr-wobble-top">
+            <img class="hvr-buzz" src="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/TheSmurfs2011Poster.jpg/220px-TheSmurfs2011Poster.jpg">
+            <p>The Smurfs (2011)</p>
+            <a th:href="@{/movie2}">Book</a>
+        </div>
+        <div class="movie hvr-wobble-top">
+            <img class="hvr-buzz" src="https://upload.wikimedia.org/wikipedia/en/1/13/Storks_%28film%29_poster_2.jpg">
+            <p>Storks (2016)</p>
+            <a th:href="@{/movie3}">Book</a>
+        </div>
+        <div class="movie hvr-wobble-top">
+            <img class="hvr-buzz" src="https://upload.wikimedia.org/wikipedia/en/5/50/RatatouillePoster.jpg">
+            <p>Ratatouille (2007)</p>
+            <a th:href="@{/movie4}">Book</a>
+        </div>
+        <div class="movie hvr-wobble-top">
+            <img class="hvr-buzz" src="https://www.movienewsletters.net/photos/121687R1.jpg">
+            <p>From Up on Poppy Hill (2011)</p>
+            <a th:href="@{/movie5}">Book</a>
+        </div>
+        <div class="movie hvr-wobble-top">
+            <img class="hvr-buzz" src="https://upload.wikimedia.org/wikipedia/en/2/2d/Bridgit-mendler-summertime.jpg">
+            <p>Arrietty (2010)</p>
+            <a th:href="@{/movie6}">Book</a>
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
