@@ -21,4 +21,22 @@ and features to access databases and perform CRUD operations only for the admin.
 
 > **Landing Page:**
 
-![88800be1d31e3515b96c634d9ae401cd.png](:/19e595073cf64c70a002036195911c14)
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/2021-05-18_18-39.png" 
+     alt="Landing Page"
+     width="350"
+     height="400"/>
+> **Movie Page**
+
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/moviepage.png" 
+     alt="Landing Page"
+     width="200"
+     height="300"/>
+> **Confirmation**
+
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/confirmation.png" 
+     alt="Landing Page"
+     width="200"
+     height="300"/>
+     
+
+     
