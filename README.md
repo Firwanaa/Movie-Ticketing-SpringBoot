@@ -19,24 +19,97 @@ contains many features like HTTP Sessions, security, interacting with databases,
 and features to access databases and perform CRUD operations only for the admin.
 ```
 
-> **Landing Page:**
+>- [x] SQL DataBase
+>- [x] Java Beans
+>- [x] Lombok
+>- [x] Spring Security
+>- [x] Spring Web
+>- [x] Thymeleaf
 
+> **Landing Page:**
+<p align="center">
 <img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/2021-05-18_18-39.png" 
      alt="Landing Page"
      width="350"
-     height="400"/>
-> **Movie Page**
+     height="430"/>
+</p>
 
+> **Movie Page**
+<p align="center">
 <img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/moviepage.png" 
      alt="Landing Page"
      width="200"
      height="300"/>
-> **Confirmation**
+</p>
 
+> **Confirmation**
+<p align="center">
 <img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/confirmation.png" 
      alt="Landing Page"
      width="200"
      height="300"/>
-     
+</p>
 
-     
+> **Ticket File**
+<p align="center">
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/TicketFile.png" 
+     alt="Landing Page"
+     width="200"
+     height="300"/>
+</p>
+
+> **Tickets Page**
+<p align="center">
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/TicketsPage.png" 
+     alt="Landing Page"
+     width="500"
+     height="200"/>
+</p>
+
+> **Seat Taken**
+<p align="center">
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/seatTaken.png" 
+     alt="Landing Page"
+     width="500"
+     height="200"/>
+</p>
+
+> **Registration Page**
+<p align="center">
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/register.png" 
+     alt="Landing Page"
+     width="500"
+     height="200"/>
+</p>
+
+> **User Badge**
+<p align="center">
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/userInfo.png" 
+     alt="Landing Page"
+     width="220"
+     height="200"/>
+</p>
+
+> **No Access**
+<p align="center">
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/noaccess.png" 
+     alt="Landing Page"
+     width="500"
+     height="200"/>
+</p>
+
+> **Admin Badge**
+<p align="center">
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/adminInfo.png" 
+     alt="Landing Page"
+     width="220"
+     height="200"/>
+</p>
+
+> **Admin Page**
+<p align="center">
+<img src="https://github.com/Firwanaa/Movie_Ticketing_Sys_SprintBoot/blob/main/adminCrud.png" 
+     alt="Landing Page"
+     width="380"
+     height="500"/>
+</p>
